@@ -10,7 +10,10 @@ export default defineConfig({
   output: 'server',
 
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
+    ssr: {
+      external: ["crypto", "fs", "path", "stream", "http", "https", "querystring", "url"],
+    },
   },
 
   adapter: cloudflare()
