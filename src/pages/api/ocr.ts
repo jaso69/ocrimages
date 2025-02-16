@@ -40,9 +40,9 @@ export const POST = async ({ request }) => {
     const response = await openai.chat.completions.create({
       model: "gpt-4-turbo", // Usar el nuevo modelo
       messages: [
-        { role: "system", content: "Eres un asistente que extrae texto de imágenes y debes analizar e interpretar la información extraída. Y tambien la informacion visual e intentar identificar la imagen que se está analizando si se trata de un coche marca y modelo si es un escudo a quien pertenece etc." },
+        { role: "system", content: "Eres un asistente que extrae texto de imágenes y analizas e interpretas la informacion visual e intentar identificar la imagen que se está analizando." },
         { role: "user", content: [
-          { type: "text", text: "Extrae el texto de esta imagen:" },
+          { type: "text", text: "Describe esta imagen en detalle." },
           { type: "image_url", image_url: { url: imageUrl } }
         ]},
       ],
